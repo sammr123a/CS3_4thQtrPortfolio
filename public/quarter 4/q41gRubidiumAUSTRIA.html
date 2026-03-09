@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Q4 1st Graded | Movie Rating</title>
+
+  <meta name="description" content="Movie Rating 4th Quarter 1st Graded.">
+  <meta name="author" content="Rb02 - Samantha Therese K. Austria">
+
+  <link rel="stylesheet" href="q41gRubidiumAUSTRIA.css">
+</head>
+<script src="https://kit.fontawesome.com/c408efa813.js" crossorigin="anonymous"></script>
+
+<body style="background-color: #ffccdc;">
+    <div style="background-color: #fae6e7; padding: 10px; width: 40%;border-radius: 10px; box-shadow: 0 4px 8px rgba(24, 45, 77, 0.3); margin:auto" >
+
+        <form id="idForm" style="background-color: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(24, 45, 77, 0.3);">
+            <h2 style="font-family: 'League Spartan', sans-serif; color: #333; text-align: center;">Add a Movie</h2>
+                <label  for="movieTitle"><p ><b>Title:</b> </p></label>
+                <input type="text" id="movieTitle" required><br><br>
+
+                <label for="year"><p><b>Year:</b> </p></label>
+                <input type="text" id="year" required><br><br>
+
+                <label for="genre"><p><b>Genre:</b> </p></label>
+                <select id="movieGenre" style="width: 100%;" >
+                    <option value="Action">Action</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Thriller">Thriller</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Sci-Fi">Sci-Fi</option>
+                </select>
+
+                <label for="rating"><p><b>Rating:</b> </p></label>
+                <div class="star-rating">
+                    <input type="radio" id="star5" name="rating">
+                    <label for="star5" class="fa fa-star"></label>
+
+                    <input type="radio" id="star4" name="rating">
+                    <label for="star4" class="fa fa-star"></label>
+
+                    <input type="radio" id="star3" name="rating">
+                    <label for="star3" class="fa fa-star"></label>
+
+                    <input type="radio" id="star2" name="rating">
+                    <label for="star2" class="fa fa-star"></label>
+
+                    <input type="radio" id="star1" name="rating">
+                    <label for="star1" class="fa fa-star"></label>
+                </div>
+            <input type="submit" style="width:100%;" value="Add Movie">
+        </form>
+
+        <h1 style="font-family: 'League Spartan', sans-serif; color: #333; text-align: center; margin-top: 40px;">
+            Movie List
+        </h1>
+        <div id="listMovies" style="font-family: 'League Spartan', sans-serif; color: #333; "> 
+            <!-- Movie list will be displayed here -->
+        </div>
+    </div>
+
+    
+
+    <script src="q41gRubidiumAUSTRIA.js"></script>
+</body>
