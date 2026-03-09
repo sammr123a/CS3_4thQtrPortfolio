@@ -1,6 +1,7 @@
 
 
 let listOfMovies=JSON.parse(localStorage.getItem("listOfMovies")) || [];
+// retrieves saved movie list from browser's locall storage, if none, empty array is created
 
 const form=document.querySelector("form");
 
@@ -19,6 +20,7 @@ form.addEventListener("submit", function(event){
         localStorage.setItem("listOfMovies", JSON.stringify(listOfMovies));
         displayMovies(listOfMovies);
     });
+// adds event listener to form submission, retrieves the rating value, creates a movie object with the form data, saves it to local storage, and updates the displayed movie list
 
 
 function displayMovies(listOfMovies){
@@ -37,4 +39,5 @@ function displayMovies(listOfMovies){
     }
         document.getElementById("listMovies").innerHTML = showList;
 }
+// defines a function to display the list of movies, iterating through the movie list and creating HTML elements to show each movie's details and rating as stars
 displayMovies(listOfMovies);
