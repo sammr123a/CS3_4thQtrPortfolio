@@ -9,21 +9,35 @@ form.addEventListener("submit", function(event){
 
     event.preventDefault();
 
-    let rating = document.querySelector("input[name='rating']:checked").value; 
+    let rating = Number(document.querySelector("input[name='rating']:checked").value); 
+    let movieExists = false;
 
-    listOfMovies.push({
-        title: movieTitle.value,
-        year: year.value,
+
+    for(let i=0; i<listOfMovies.length; i++){
+        if(listOfMovies[i].title.toLowerCase() === movieTitle.value.toLowerCase() ){
+            listOfMovies[i].rating = Math.round((Number(listOfMovies[i].rating) + rating) / 2);
+            movieExists = true;
+            break;
+        }
+    }
+//checks if the movie already exists in the list, if it does, it updates the rating by averaging it all and sets a flag to true, if it doesn't exist, it adds the new movie to the list with the provided details
+    if(!movieExists){
+        listOfMovies.push({
+            title: movieTitle.value,
+            year: year.value,
         genre: movieGenre.value,
         rating: rating
      })
+// if the movie does not exist, it creates a new movie object with the title, year, genre, and rating from the form inputs and adds it to the list of movies
+    }
         localStorage.setItem("listOfMovies", JSON.stringify(listOfMovies));
         displayMovies(listOfMovies);
     });
+
 // adds event listener to form submission, retrieves the rating value, creates a movie object with the form data, saves it to local storage, and updates the displayed movie list
 
    function deleteMovie(index) {
-            userConfirmed= confirm("Are you sure you want to delete this item?")
+            let userConfirmed= confirm("Are you sure you want to delete this item?")
                 if(userConfirmed) {
                     listOfMovies.splice(index, 1);
                     localStorage.setItem("listOfMovies", JSON.stringify(listOfMovies));
@@ -35,9 +49,9 @@ form.addEventListener("submit", function(event){
         }
 
 function displayMovies(listOfMovies){
-    showList="";
+    let showList="";
 
-    for(i=0; i<listOfMovies.length; i++){
+    for(let i=0; i<listOfMovies.length; i++){
         let idx = 0;
         let stars= "";
         while(idx < listOfMovies[i].rating){
