@@ -22,6 +22,17 @@ form.addEventListener("submit", function(event){
     });
 // adds event listener to form submission, retrieves the rating value, creates a movie object with the form data, saves it to local storage, and updates the displayed movie list
 
+   function deleteMovie(index) {
+            userConfirmed= confirm("Are you sure you want to delete this item?")
+                if(userConfirmed) {
+                    listOfMovies.splice(index, 1);
+                    localStorage.setItem("listOfMovies", JSON.stringify(listOfMovies));
+                    displayMovies(listOfMovies);
+                }
+                else{
+                    alert("Deletion cancelled.");
+                }
+        }
 
 function displayMovies(listOfMovies){
     showList="";
@@ -35,7 +46,10 @@ function displayMovies(listOfMovies){
         }
         showList += `<div class="listMovies">
         ${listOfMovies[i].title} (${listOfMovies[i].year}) - ${listOfMovies[i].genre}, Rating: ${stars}
+        <button class="delete-btn" onclick="deleteMovie(${i})">Delete</button>
         </div>`;
+
+     
     }
         document.getElementById("listMovies").innerHTML = showList;
 }
