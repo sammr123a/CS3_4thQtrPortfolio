@@ -47,6 +47,8 @@ form.addEventListener("submit", function(event){
                     alert("Deletion cancelled.");
                 }
         }
+        window.deleteMovie = deleteMovie;
+// defines a function to delete a movie from the list, asking for user confirmation before removing the movie from the list and updating local storage and the displayed list
 
 function displayMovies(listOfMovies){
     let showList="";
