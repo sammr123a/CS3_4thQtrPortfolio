@@ -11,11 +11,16 @@ form.addEventListener("submit", function(event){
 
     let rating = Number(document.querySelector("input[name='rating']:checked").value); 
     let movieExists = false;
+    const movieTitle = document.getElementById("movieTitle");
+    const year = document.getElementById("year");
+    const movieGenre = document.getElementById("movieGenre");
 
 
     for(let i=0; i<listOfMovies.length; i++){
         if(listOfMovies[i].title.toLowerCase() === movieTitle.value.toLowerCase() ){
             listOfMovies[i].rating = Math.round((Number(listOfMovies[i].rating) + rating) / 2);
+            listOfMovies[i].year = year.value;         
+            listOfMovies[i].genre = movieGenre.value;
             movieExists = true;
             break;
         }
