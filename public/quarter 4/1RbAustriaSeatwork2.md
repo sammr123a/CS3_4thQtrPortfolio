@@ -106,6 +106,7 @@ Answer: z-index controls the vertical stacking of elements. If we were to swap z
 3. Please answer the following reflection questions (15 minutes)
 
     a. Could you summarize the differences between the CSS position values (static, relative, absolute, fixed)? 
+    answer: static - it is positioned to the normal flow of ur page.
 
     b. How does absolute positioning depend on its parent element?
 
