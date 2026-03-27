@@ -57,17 +57,21 @@
 
 - Guided Question: What changed compared to the default static positioning? Try to give different values to top and left or you can change it to bottom, right.
 
+Answer: It moves div "sidebar" 20px down 20 px to the left relative to the static position. 
+
 ### Step 2 (Fixed):
 
 - Add in css ```position: fixed; bottom: 0; width: 100%;``` to .footer.
 
 - Guided Question: What happens when you scroll the page? Why does the footer behave differently from position relative?
+Answer: The div "footer" stays at the bottom when you scroll the page. In position relative, the footer would have moved once user scrolls.
 
 ### Step 3 (Absolute):
 
 - Add in css ```position: absolute; top: 66px; left: 200px;``` to .content.
 
 - Guided Question: What is the effect of position: absolute on an element? How is it different from fixed?
+Answer: Position: absolute moves the element relative to the top left corner (top: 66px; left:200px). The difference between absolute and fixed is that fixed only respects the viewport while absolute respects relative parents.
 
 ### Step 4 : (Absolute)
 
@@ -87,6 +91,7 @@
 - Give .content a z-index: 1.
 
 - Guided Question: Why does the notice appear on top of the content? What happens if you swap the z‑index values?
+Answer: z-index controls the vertical stacking of elements. If we were to swap z-index values, notice would be under content.
 
 - Challenge: 
     * What changes that you have to do on the code that will position .notice box on the top right corner of the .content box? Please write the code on paper as well (both html and css on the part of .notice and .content).
