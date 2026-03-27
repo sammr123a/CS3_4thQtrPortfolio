@@ -96,9 +96,9 @@ Answer: z-index controls the vertical stacking of elements. If we were to swap z
 - Challenge: 
     * What changes that you have to do on the code that will position .notice box on the top right corner of the .content box? Please write the code on paper as well (both html and css on the part of .notice and .content).
     Answer: To position the .notice box on the top right corner, we change the value of left in .notice to a higher value.
-    
+
     * Try to change the position of .content to relative then to fixed. What do you observed each time?
-  Answer: relative moves .content 66px up and 200px to the left relative to the static position. While fixed did not move it anywhere since its previous position is already similar to when it is positioned relative to the viewport.
+  Answer: relative moves .content 66px down and 200px to the right relative to the static position. While fixed did not move it anywhere and also did not move when its scrolled.
 
     * What do you observe on about the effect of z-index on .notice and .content boxes?
     Answer: z-index controls their position in their vertical stacking. 
