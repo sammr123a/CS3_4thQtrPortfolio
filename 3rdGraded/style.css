@@ -4,9 +4,9 @@ html {
 }
 
 body{
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Poppins', sans-serif;
-  font-family: 'Roboto', sans-serif;
+  font-family:'Roboto','Poppins', 'Open Sans', sans-serif;
+  /* font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif; */
   background-color: cornsilk;
   color:royalblue;
   padding: 0;
